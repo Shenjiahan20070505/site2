@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Max Size Scrolling Div</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 全屏容器 */
+        .full-screen-box {
+            /* 撑满整个浏览器窗口 */
+            width: 100vw;
+            height: 100vh;
+
+            background-image: url('https://yqx.grazy.cn/public/uploads/image/course/20201016/18e15b4e4aab78e53f19c3a83f73a8ec.jpg');
+            background-repeat: repeat-x;
+            /* 背景图高度撑满容器，宽度自适应 */
+            background-size: auto 100%;
+
+            animation: maxScroll 20s linear infinite;
+        }
+
+        @keyframes maxScroll {
+            0% {
+                background-position: 0 0;
+            }
+            /* 图片原始宽度1720px，这里用容器宽度的滚动也可以，或者继续用1720px */
+            100% {
+                background-position: -1720px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="full-screen-box"></div>
+</body>
+</html>
